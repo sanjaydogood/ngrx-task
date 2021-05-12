@@ -1,47 +1,16 @@
-import { Store } from '@ngrx/store';
-import { removeCountry } from './../../state/country.actions';
-import { Country } from './../../models/country.model';
 import { KeyValue } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { tableCountry } from 'src/app/models/tableCountry.model';
 
-const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
-interface tableCountry extends Country {
-  id: number;
-}
 @Component({
   selector: 'dict-table',
   templateUrl: './dict-table.component.html',
   styleUrls: ['./dict-table.component.scss'],
 })
-export class DictTableComponent implements OnInit {
-  private _rows: Array<tableCountry> = [];
+export class DictTableComponent {
+  @Input() rows: Array<tableCountry>;
+  @Output() _removeCountry = new EventEmitter<string>();
 
-  @Input('tableData') set rows(tableData: Array<Country>) {
-    let tableDataId: Array<tableCountry>;
-    if (tableData.length !== 0) {
-      tableDataId = this.addSerialNumber(tableData);
-      alphabetArray.forEach((letter) => {
-        const headingIndex = tableDataId.findIndex((country) =>
-          country.name.startsWith(letter.toUpperCase())
-        );
-        if (headingIndex !== -1) {
-          tableDataId.splice(
-            headingIndex,
-            0,
-            this.createDictHeadingObject(letter)
-          );
-        }
-      });
-    }
-    this._rows = tableDataId;
-  }
-
-  get rows() {
-    return this._rows;
-  }
-  constructor(private store: Store) {}
-
-  ngOnInit(): void {}
   originalOrder = (
     a: KeyValue<number, string>,
     b: KeyValue<number, string>
@@ -49,17 +18,7 @@ export class DictTableComponent implements OnInit {
     return 0;
   };
 
-  createDictHeadingObject(letter: string) {
-    return { id: -1, name: 'heading', capital: letter.toUpperCase() };
-  }
-
-  addSerialNumber(tableData: Array<Country>): Array<tableCountry> {
-    return tableData.map((country, index) => {
-      return { id: index + 1, ...country };
-    });
-  }
-
   removeCountry(CountryName: string) {
-    this.store.dispatch(removeCountry({ CountryName }));
+    this._removeCountry.emit(CountryName);
   }
 }

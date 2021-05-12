@@ -9,9 +9,10 @@ import { countriesReducer } from './state/country.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { CountryEffects } from './state/country.effects';
+import { TableContainerComponent } from './components/table-container/table-container.component';
 
 @NgModule({
-  declarations: [AppComponent, DictTableComponent],
+  declarations: [AppComponent, DictTableComponent, TableContainerComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

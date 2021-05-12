@@ -1,53 +1,6 @@
 <div class="container">
   <div class="dict-table-container" *ngIf="isUserLoggedIn; else loginPage">
-    <form [formGroup]="addCountryForm" (ngSubmit)="addCountry()">
-      <div class="form-row">
-        <div class="form-group col-md-5">
-          <input
-            type="text"
-            class="form-control"
-            name="country"
-            value=""
-            placeholder="Country"
-            formControlName="country"
-          />
-        </div>
-
-        <div class="form-group col-md-5">
-          <input
-            type="text"
-            class="form-control"
-            name="capital"
-            value=""
-            placeholder="Capital"
-            formControlName="capital"
-          />
-        </div>
-
-        <div class="form-group col-md-2">
-          <button type="submit" class="btn btn-primary" onclick="">Add</button>
-        </div>
-      </div>
-    </form>
-    <form [formGroup]="removeCountryForm" (ngSubmit)="removeCountry()">
-      <div class="form-row">
-        <div class="form-group col-md-8">
-          <input
-            type="text"
-            class="form-control"
-            name="country"
-            value=""
-            placeholder="Country"
-            formControlName="country"
-          />
-        </div>
-        <div class="form-group col-md-3">
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </div>
-      </div>
-    </form>
-
-    <dict-table [tableData]="countries$ | async"></dict-table>
+    <table-container [tableData]="countries$ | async"></table-container>
   </div>
   <ng-template #loginPage>
     <button class="btn btn-warning" (click)="getCountriesData()">
