@@ -1,0 +1,28 @@
+.row {
+  height: inherit;
+}
+
+.container {
+  height: inherit;
+}
+
+.col {
+  padding: 0.325em;
+  height: inherit;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+.country-table-container {
+  overflow: auto;
+}
+
+.state-table-container {
+  overflow: auto;
+}
+
+.header-text {
+  font-size: 1.125em;
+  font-weight: 600;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+<main-template>
+  <div class="container">
+    <dict-table
+      [rows]="countryRows$ | async"
+      [isActionRequired]="true"
+      (_removeRow)="removeCountry($event)"
+    ></dict-table>
+  </div>
+</main-template>

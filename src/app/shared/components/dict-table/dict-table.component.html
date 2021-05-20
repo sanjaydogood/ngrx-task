@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr *ngIf="rows">
+        <th scope="col" *ngFor="let col of rows[0] | keyvalue: originalOrder">
+          {{ col.key | titlecase }}
+        </th>
+        <th scope="col" *ngIf="isActionRequired">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let row of rows"
+        class="data-row"
+        (click)="rowClicked(row.name)"
+      >
+        <ng-container *ngIf="row.id !== -1; else dictHeading">
+          <td *ngFor="let element of row | keyvalue: originalOrder">
+            {{ element.value }}
+          </td>
+          <td *ngIf="isActionRequired">
+            <button class="btn btn-danger" (click)="removeRow(row.name)">
+              Delete
+            </button>
+          </td>
+        </ng-container>
+        <ng-template #dictHeading>
+          <th scope="row" [attr.colspan]="_colspan" class="heading-row">
+            {{ row.name }}
+          </th>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,10 +1,13 @@
-<div class="container">
-  <div class="dict-table-container" *ngIf="isUserLoggedIn; else loginPage">
+<div class="container card-container">
+  <!-- <div class="dict-table-container" *ngIf="isUserLoggedIn; else loginPage">
     <table-container [tableData]="countries$ | async"></table-container>
   </div>
   <ng-template #loginPage>
     <button class="btn btn-warning" (click)="getCountriesData()">
       Get Data!
     </button>
-  </ng-template>
+  </ng-template> -->
+  <!-- <div class="custom-card"> -->
+  <router-outlet></router-outlet>
+  <!-- </div> -->
 </div>

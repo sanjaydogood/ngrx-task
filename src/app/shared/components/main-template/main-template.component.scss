@@ -1,0 +1,17 @@
+.table-container {
+  grid-area: table-area;
+  height: 30em;
+  box-shadow: 0 0 8px 1px lightgray;
+  border-radius: 0.325em;
+}
+
+.form-container {
+  grid-area: form-area;
+}
+
+.main-container {
+  display: grid;
+  grid-template-areas:
+    "form-area"
+    "table-area";
+}

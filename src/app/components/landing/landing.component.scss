@@ -1,0 +1,38 @@
+.landing-container {
+  position: absolute;
+  top: calc(50% - 2em);
+  width: calc(100% - 2em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 1.125em;
+  font-weight: 500;
+  border-radius: 0.325em;
+  padding: 0.325em;
+
+  &.loading {
+    background-color: lightcoral;
+    color: white;
+  }
+
+  &.done {
+    background-color: #3cc63c;
+    color: white;
+  }
+}

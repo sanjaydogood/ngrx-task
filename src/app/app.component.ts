@@ -1,10 +1,5 @@
-import { map } from 'rxjs/operators';
-import { Component } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Country } from './models/country.model';
-import { getCountriesRequest } from './state/country.actions';
-import { selectCountries } from './state/country.selectors';
-
+import { Component, OnInit } from '@angular/core';
+import { Country } from './shared/models/countries/country.model';
 const sortAscCountry = (a: Country, b: Country): number => {
   if (a.name < b.name) return -1;
   else if (a.name > b.name) return 1;
@@ -15,23 +10,25 @@ const sortAscCountry = (a: Country, b: Country): number => {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'home-depot-task';
 
-  countries$ = this.store
-    .pipe(select(selectCountries))
-    .pipe(
-      map((countries) =>
-        countries.map(({ name, capital }): Country => ({ name, capital }))
-      )
-    )
-    .pipe(map((countries) => countries.sort(sortAscCountry)));
+  // countries$ = this.store
+  //   .pipe(select(selectCountries))
+  //   .pipe(
+  //     map((countries) =>
+  //       countries.map(({ name, capital }): Country => ({ name, capital }))
+  //     )
+  //   )
+  //   .pipe(map((countries) => countries.sort(sortAscCountry)));
 
-  isUserLoggedIn = false;
-  constructor(private store: Store) {}
+  // isUserLoggedIn = false;
+  // constructor(private store: Store<AppState>) {}
+  constructor() {}
 
-  getCountriesData() {
-    this.store.dispatch(getCountriesRequest());
-    this.isUserLoggedIn = true;
-  }
+  ngOnInit(): void {}
+
+  // getCountriesData() {
+  //   this.store.dispatch(getCountriesRequest());
+  //   this.isUserLoggedIn = true;
 }

@@ -1,0 +1,31 @@
+<div class="landing-container">
+  <div *ngIf="!receivedAuthToken; else loadingDone">
+    <p class="status loading">Setting up...</p>
+  </div>
+  <ng-template #loadingDone>
+    <p class="status done">Setup Done!</p>
+  </ng-template>
+  <div class="buttons-container">
+    <button
+      class="btn btn-warning"
+      [disabled]="!receivedAuthToken"
+      (click)="countriesNavigate()"
+    >
+      Get Countries
+    </button>
+    <button
+      class="btn btn-warning"
+      [disabled]="!receivedAuthToken"
+      (click)="statesNavigate()"
+    >
+      Get States
+    </button>
+    <button
+      class="btn btn-warning"
+      [disabled]="!receivedAuthToken"
+      (click)="citiesNavigate()"
+    >
+      Get Cities
+    </button>
+  </div>
+</div>

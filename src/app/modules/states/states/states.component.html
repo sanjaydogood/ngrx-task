@@ -1,0 +1,29 @@
+<main-template>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="header-text">Countries</div>
+        <div class="country-table-container">
+          <dict-table
+            [rows]="countryRows$ | async"
+            (_removeRow)="removeCountry($event)"
+            (_rowClicked)="selectedCountry($event)"
+          ></dict-table>
+        </div>
+      </div>
+      <div class="col state-table">
+        <div class="header-text">States</div>
+        <div class="state-table-container">
+          <dict-table
+            *ngIf="stateRows$ | async; else staticContent"
+            [rows]="stateRows$ | async"
+            (_removeRow)="removeCountry($event)"
+          ></dict-table>
+        </div>
+        <ng-template #staticContent>
+          <p class="static-text">Click on a country to show its states</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</main-template>

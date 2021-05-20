@@ -1,0 +1,44 @@
+.row {
+  height: inherit;
+}
+
+.container {
+  height: inherit;
+}
+
+.col {
+  padding: 0.325em;
+  height: inherit;
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+
+.country-table-container {
+  overflow: auto;
+}
+
+.city-table-container {
+  overflow: auto;
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+  font-size: 1.125em;
+  font-weight: 600;
+}
+.back-button-container {
+  position: absolute;
+  right: 0;
+}
+
+.state-table {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

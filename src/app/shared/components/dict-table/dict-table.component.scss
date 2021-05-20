@@ -1,0 +1,18 @@
+.container {
+  min-height: 10em;
+  min-width: 15em;
+  overflow: auto;
+  padding: 0;
+}
+.table {
+  background-color: white;
+  margin: 0;
+}
+
+.data-row:hover {
+  cursor: pointer;
+}
+
+.heading-row:hover {
+  cursor: default;
+}

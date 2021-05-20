@@ -1,25 +1,22 @@
-import { DictTableComponent } from './components/dict-table/dict-table.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { countriesReducer } from './state/country.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { CountryEffects } from './state/country.effects';
-import { TableContainerComponent } from './components/table-container/table-container.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
-  declarations: [AppComponent, DictTableComponent, TableContainerComponent],
+  declarations: [AppComponent, LandingComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    StoreModule.forRoot({ countries: countriesReducer }),
+    AppRoutingModule,
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([CountryEffects]),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],

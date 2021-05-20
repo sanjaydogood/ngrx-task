@@ -1,0 +1,44 @@
+<main-template>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="header-text-container">
+          <div class="header-text">
+            {{ _header }}
+          </div>
+          <div class="back-button-container" *ngIf="!isCountryTableShown">
+            <button
+              class="btn btn-primary back-button"
+              (click)="goBackToCountries()"
+            >
+              Back
+            </button>
+          </div>
+        </div>
+        <div class="country-table-container">
+          <dict-table
+            [rows]="rows$ | async"
+            (_rowClicked)="rowSelected($event)"
+          ></dict-table>
+        </div>
+      </div>
+      <div class="col city-table">
+        <div class="header-text-container">
+          <div class="header-text">Cities</div>
+        </div>
+        <div class="city-table-container">
+          <dict-table
+            *ngIf="cityRows$ | async; else staticContent"
+            [rows]="cityRows$ | async"
+          ></dict-table>
+        </div>
+        <ng-template #staticContent>
+          <p class="static-text">
+            Click on a {{ isCountryTableShown ? "country" : "state" }} to show
+            its {{ isCountryTableShown ? "states" : "cities" }}
+          </p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</main-template>
