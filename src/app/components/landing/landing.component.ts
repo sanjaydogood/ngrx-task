@@ -18,23 +18,24 @@ export class LandingComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    const token = sessionStorage.getItem('AUTH_TOKEN');
-    if (!token) {
-      this.apiAuthSubscription$ = this.apiService
-        .getApiData<TokenResponseBody>(
-          environment.GET_TOKEN_URL,
-          environment.GET_TOKEN_REQUEST_HEADER
-        )
-        .pipe(retry(3))
-        .subscribe((payload: TokenResponseBody) => {
-          environment.AUTH_TOKEN = payload.auth_token;
-          this.receivedAuthToken = true;
-          sessionStorage.setItem('AUTH_TOKEN', environment.AUTH_TOKEN);
-        });
-    } else {
-      this.receivedAuthToken = true;
-      environment.AUTH_TOKEN = sessionStorage.getItem('AUTH_TOKEN');
-    }
+    // const token = sessionStorage.getItem('AUTH_TOKEN');
+    // if (!token) {
+    this.apiAuthSubscription$ = this.apiService
+      .getApiData<TokenResponseBody>(
+        environment.GET_TOKEN_URL,
+        environment.GET_TOKEN_REQUEST_HEADER
+      )
+      .pipe(retry(3))
+      .subscribe((payload: TokenResponseBody) => {
+        environment.AUTH_TOKEN = payload.auth_token;
+        this.receivedAuthToken = true;
+        sessionStorage.setItem('AUTH_TOKEN', environment.AUTH_TOKEN);
+      });
+    // }
+    // else {
+    //   this.receivedAuthToken = true;
+    //   environment.AUTH_TOKEN = sessionStorage.getItem('AUTH_TOKEN');
+    // }
   }
 
   countriesNavigate(): void {
@@ -50,8 +51,8 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if (!this.receivedAuthToken) {
-      this.apiAuthSubscription$.unsubscribe();
-    }
+    // if (!this.receivedAuthToken) {
+    this.apiAuthSubscription$.unsubscribe();
+    // }
   }
 }

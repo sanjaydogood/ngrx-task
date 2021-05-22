@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { addDataRequest } from 'src/app/state/add-data-form.actions';
 
 @Component({
   selector: 'add-data-form',
@@ -23,13 +24,7 @@ export class AddDataFormComponent implements OnInit {
     const countryName = this.addData.get('country').value;
     const stateName = this.addData.get('state').value;
     const cityName = this.addData.get('city').value;
-
-    // const Country: Country = {
-    //   name: countryName,
-    //   states: [{ name: stateName, cities: [{ name: cityName }] }],
-    // };
-
-    // this.store.dispatch(addCountry({ Country }));
+    this.store.dispatch(addDataRequest({ countryName, stateName, cityName }));
     this.addData.reset();
   }
 

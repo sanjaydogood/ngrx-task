@@ -70,9 +70,7 @@ export class CitiesEffects {
             city.state_name === payload.stateName
         );
 
-        console.log(state);
         if (!state) {
-          console.log('state is undefined');
           return of(
             getCitiesRequest({
               countryName: payload.countryName,

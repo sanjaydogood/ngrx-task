@@ -29,7 +29,6 @@ export class CountryEffects {
         of(action).pipe(withLatestFrom(this.store.select(selectCountries)))
       ),
       switchMap(([_, countries]) => {
-        console.log(countries.length);
         if (!countries.length) {
           return this.apiService
             .getApiData<PayloadCountry[]>(

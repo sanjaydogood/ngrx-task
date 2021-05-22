@@ -5,6 +5,7 @@ import { MainTemplateComponent } from './components/main-template/main-template.
 import { AddDataFormComponent } from './components/add-data-form/add-data-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [

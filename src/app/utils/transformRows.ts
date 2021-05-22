@@ -7,6 +7,10 @@ const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('');
 export const transformRows = (tableData: tableRow[]): tableRow[] => {
   let tableDataId: tableRow[];
   if (tableData.length !== 0) {
+    tableData.sort((a, b) => {
+      if (a.name >= b.name) return 1;
+      else return -1;
+    });
     tableDataId = addSerialNumber(tableData);
     alphabetArray.forEach((letter) => {
       const headingIndex = tableDataId.findIndex((row) =>

@@ -51,7 +51,6 @@ export class CitiesComponent implements OnInit {
   }
 
   rowSelected(row: string) {
-    console.log('current table is of: ', this._header);
     if (this._header === 'Countries') {
       this.isCountryTableShown = false;
       this.selectedCountry = row;

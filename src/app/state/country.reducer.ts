@@ -1,4 +1,5 @@
-import { createReducer, on, Store } from '@ngrx/store';
+import { addDataRequest } from './add-data-form.actions';
+import { combineReducers, createReducer, on } from '@ngrx/store';
 import { Country } from '../shared/models/countries/country.model';
 import { getCountriesDone } from './country.actions';
 
@@ -15,8 +16,15 @@ export const initialState: Country[] = [];
 
 export const countriesReducer = createReducer(
   initialState,
-  on(getCountriesDone, (_, { countries }) => {
-    console.log(countries);
-    return [...countries];
+  on(getCountriesDone, (_, { countries }) => [...countries]),
+  on(addDataRequest, (storeState, action) => {
+    const country: Country | undefined = storeState.find(
+      (country) => country.name === action.countryName
+    );
+
+    if (country) {
+      return [...storeState];
+    }
+    return [...storeState, { name: action.countryName }];
   })
 );

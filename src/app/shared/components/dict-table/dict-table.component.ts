@@ -43,6 +43,8 @@ export class DictTableComponent {
   }
 
   rowClicked(rowId: string) {
-    this._rowClicked.emit(rowId);
+    if (rowId.length > 1) {
+      this._rowClicked.emit(rowId);
+    }
   }
 }

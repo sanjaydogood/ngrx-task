@@ -14,8 +14,6 @@ export const selectCitiesByState = createSelector(
       const city: City | undefined = cities.find(
         (city) => city.country_name === country && city.state_name === state
       );
-
-      console.log(city?.cities);
       if (city) return city.cities;
     }
     return [];
