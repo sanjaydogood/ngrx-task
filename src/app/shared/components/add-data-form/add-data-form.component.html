@@ -7,7 +7,7 @@
           class="form-control"
           name="country"
           value=""
-          placeholder="Country"
+          placeholder="{{ 'add-data-form.country-ph-text' | translate }}"
           formControlName="country"
           required
         />
@@ -19,7 +19,7 @@
           class="form-control"
           name="state"
           value=""
-          placeholder="State"
+          placeholder="{{ 'add-data-form.state-ph-text' | translate }}"
           formControlName="state"
           required
         />
@@ -30,13 +30,15 @@
           class="form-control"
           name="city"
           value=""
-          placeholder="City"
+          placeholder="{{ 'add-data-form.city-ph-text' | translate }}"
           formControlName="city"
           required
         />
       </div>
       <div class="form-group col-md-2">
-        <button type="submit" class="btn btn-primary" onclick="">Add</button>
+        <button type="submit" class="btn btn-primary" onclick="">
+          {{ "add-data-form.add-button-text" | translate }}
+        </button>
       </div>
     </div>
   </form>

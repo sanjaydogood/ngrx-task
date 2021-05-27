@@ -1,0 +1,37 @@
+{
+  "landing": {
+    "setting-up-text": "Mise en place...",
+    "setup-done-text": "Configuration terminée!",
+    "countries-button-text": "Obtenir des pays",
+    "states-button-text": "Obtenir des états",
+    "cities-button-text": "Obtenir des villes"
+  },
+  "dict-table": {
+    "id-header": "Id",
+    "name-header": "Nom",
+    "action-header": "Action",
+    "delete-button-text": "Effacer"
+  },
+  "add-data-form": {
+    "add-button-text": "Ajouter",
+    "country-ph-text": "Pays",
+    "state-ph-text": "l' État",
+    "city-ph-text": "Ville"
+  },
+  "states": {
+    "states-table-static-text": "Cliquez sur un pays pour afficher ses états",
+    "states-table-header-text": "États",
+    "countries-table-header-text": "Des pays"
+  },
+  "cities": {
+    "back-button-text": "Réintégrer",
+    "States-table-header-text": "États",
+    "Countries-table-header-text": "Des pays",
+    "cities-table-header-text": "Villes",
+    "country-static-text": "pays",
+    "state-static-text": "états",
+    "states-static-text": "états",
+    "cities-static-text": "villes",
+    "main-static-text": "Cliquez sur un {{first}} pour afficher ses {{second}}"
+  }
+}

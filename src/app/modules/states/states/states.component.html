@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="header-text">Countries</div>
+        <div class="header-text">
+          {{ "states.countries-table-header-text" | translate }}
+        </div>
         <div class="country-table-container">
           <dict-table
             [rows]="countryRows$ | async"
@@ -12,7 +14,9 @@
         </div>
       </div>
       <div class="col state-table">
-        <div class="header-text">States</div>
+        <div class="header-text">
+          {{ "states.states-table-header-text" | translate }}
+        </div>
         <div class="state-table-container">
           <dict-table
             *ngIf="stateRows$ | async; else staticContent"
@@ -21,7 +25,9 @@
           ></dict-table>
         </div>
         <ng-template #staticContent>
-          <p class="static-text">Click on a country to show its states</p>
+          <p class="static-text">
+            {{ "states.states-table-static-text" | translate }}
+          </p>
         </ng-template>
       </div>
     </div>

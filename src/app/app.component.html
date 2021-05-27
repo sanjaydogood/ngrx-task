@@ -1,3 +1,29 @@
+<div class="langs-container">
+  <div class="lang-container">
+    <button
+      class="btn"
+      [ngClass]="{
+        'btn-info': currentLang === 'en',
+        'lang': currentLang !== 'en'
+      }"
+      (click)="selectedLang('en')"
+    >
+      English
+    </button>
+  </div>
+  <div class="lang-container">
+    <button
+      class="btn"
+      [ngClass]="{
+        'btn-info': currentLang === 'fr',
+        'lang': currentLang !== 'fr'
+      }"
+      (click)="selectedLang('fr')"
+    >
+      Français
+    </button>
+  </div>
+</div>
 <div class="container card-container">
   <!-- <div class="dict-table-container" *ngIf="isUserLoggedIn; else loginPage">
     <table-container [tableData]="countries$ | async"></table-container>

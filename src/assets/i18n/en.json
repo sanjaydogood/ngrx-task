@@ -1,0 +1,37 @@
+{
+  "landing": {
+    "setting-up-text": "Setting Up...",
+    "setup-done-text": "Setup Done!",
+    "countries-button-text": "Get Countries",
+    "states-button-text": "Get States",
+    "cities-button-text": "Get Cities"
+  },
+  "dict-table": {
+    "id-header": "Id",
+    "name-header": "Name",
+    "action-header": "Action",
+    "delete-button-text": "Delete"
+  },
+  "add-data-form": {
+    "add-button-text": "Add",
+    "country-ph-text": "Country",
+    "state-ph-text": "State",
+    "city-ph-text": "City"
+  },
+  "states": {
+    "states-table-static-text": "Click on a country to show its states",
+    "states-table-header-text": "States",
+    "countries-table-header-text": "Countries"
+  },
+  "cities": {
+    "back-button-text": "Back",
+    "States-table-header-text": "States",
+    "Countries-table-header-text": "Countries",
+    "cities-table-header-text": "Cities",
+    "country-static-text": "country",
+    "state-static-text": "state",
+    "states-static-text": "states",
+    "cities-static-text": "cities",
+    "main-static-text": " Click on a {{first}} to show its {{second}}"
+  }
+}

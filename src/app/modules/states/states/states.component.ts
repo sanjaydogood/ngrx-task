@@ -1,18 +1,14 @@
-import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/shared/services/api.service';
-import { environment } from 'src/environments/environment';
-import { PayloadCountry } from 'src/app/shared/models/countries/payloadCountry.model';
 import { getSelectedStatesRequest } from 'src/app/state/states.actions';
 import { selectStatesByCountry } from 'src/app/state/states.selectors';
-
 import { StateObj } from 'src/app/shared/models/states/stateObj.model';
-
 import { Country } from 'src/app/shared/models/countries/country.model';
 import { getCountriesRequest } from 'src/app/state/country.actions';
 import { selectCountries } from 'src/app/state/country.selectors';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-states',

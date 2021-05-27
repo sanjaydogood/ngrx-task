@@ -5,7 +5,7 @@ import { MainTemplateComponent } from './components/main-template/main-template.
 import { AddDataFormComponent } from './components/add-data-form/add-data-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -14,12 +14,13 @@ import { StoreModule } from '@ngrx/store';
     MainTemplateComponent,
     AddDataFormComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   exports: [
     DictTableComponent,
     TableContainerComponent,
     MainTemplateComponent,
     AddDataFormComponent,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

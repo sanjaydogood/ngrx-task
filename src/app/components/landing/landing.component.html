@@ -1,9 +1,9 @@
 <div class="landing-container">
   <div *ngIf="!receivedAuthToken; else loadingDone">
-    <p class="status loading">Setting up...</p>
+    <p class="status loading">{{ "landing.setting-up-text" | translate }}</p>
   </div>
   <ng-template #loadingDone>
-    <p class="status done">Setup Done!</p>
+    <p class="status done">{{ "landing.setup-done-text" | translate }}</p>
   </ng-template>
   <div class="buttons-container">
     <button
@@ -11,21 +11,21 @@
       [disabled]="!receivedAuthToken"
       (click)="countriesNavigate()"
     >
-      Get Countries
+      {{ "landing.countries-button-text" | translate }}
     </button>
     <button
       class="btn btn-warning"
       [disabled]="!receivedAuthToken"
       (click)="statesNavigate()"
     >
-      Get States
+      {{ "landing.states-button-text" | translate }}
     </button>
     <button
       class="btn btn-warning"
       [disabled]="!receivedAuthToken"
       (click)="citiesNavigate()"
     >
-      Get Cities
+      {{ "landing.cities-button-text" | translate }}
     </button>
   </div>
 </div>

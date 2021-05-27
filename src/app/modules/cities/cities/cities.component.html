@@ -4,14 +4,14 @@
       <div class="col">
         <div class="header-text-container">
           <div class="header-text">
-            {{ _header }}
+            {{ "cities." + _header + "-table-header-text" | translate }}
           </div>
           <div class="back-button-container" *ngIf="!isCountryTableShown">
             <button
               class="btn btn-primary back-button"
               (click)="goBackToCountries()"
             >
-              Back
+              {{ "cities.back-button-text" | translate }}
             </button>
           </div>
         </div>
@@ -24,7 +24,9 @@
       </div>
       <div class="col city-table">
         <div class="header-text-container">
-          <div class="header-text">Cities</div>
+          <div class="header-text">
+            {{ "cities.cities-table-header-text" | translate }}
+          </div>
         </div>
         <div class="city-table-container">
           <dict-table
@@ -34,8 +36,22 @@
         </div>
         <ng-template #staticContent>
           <p class="static-text">
-            Click on a {{ isCountryTableShown ? "country" : "state" }} to show
-            its {{ isCountryTableShown ? "states" : "cities" }}
+            {{
+              "cities.main-static-text"
+                | translate
+                  : {
+                      first:
+                        (isCountryTableShown
+                          ? "cities.country-static-text"
+                          : "cities.state-static-text"
+                        ) | translate,
+                      second:
+                        (isCountryTableShown
+                          ? "cities.states-static-text"
+                          : "cities.cities-static-text"
+                        ) | translate
+                    }
+            }}
           </p>
         </ng-template>
       </div>

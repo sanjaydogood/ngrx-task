@@ -6,3 +6,32 @@
   min-width: 50em;
   min-height: 35em;
 }
+
+.langs-container {
+  position: absolute;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  top: 0.3125em;
+  right: 0.3125em;
+  padding: 0.3125em;
+  border-radius: 0.3125em;
+}
+.lang-container {
+  position: relative;
+  margin: 0 0.25em;
+}
+
+.lang-container:not(:first-child) > .lang::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -0.28em;
+  height: 80%;
+  width: 2px;
+  background-color: black;
+}
+
+.lang:hover {
+  background-color: lightgray;
+}

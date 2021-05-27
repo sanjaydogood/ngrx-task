@@ -2,10 +2,11 @@
   <table class="table table-hover">
     <thead>
       <tr *ngIf="rows">
-        <th scope="col" *ngFor="let col of rows[0] | keyvalue: originalOrder">
-          {{ col.key | titlecase }}
+        <th scope="col">{{ "dict-table.id-header" | translate }}</th>
+        <th scope="col">{{ "dict-table.name-header" | translate }}</th>
+        <th scope="col" *ngIf="isActionRequired">
+          {{ "dict-table.action-header" | translate }}
         </th>
-        <th scope="col" *ngIf="isActionRequired">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +21,7 @@
           </td>
           <td *ngIf="isActionRequired">
             <button class="btn btn-danger" (click)="removeRow(row.name)">
-              Delete
+              {{ "dict-table.delete-button-text" | translate }}
             </button>
           </td>
         </ng-container>
