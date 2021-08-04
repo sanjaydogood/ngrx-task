@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State } from '../shared/models/states/state.model';
+import { State } from 'src/app/shared/models/states/state.model';
 
 export const selectStatesFeatureSlice =
   createFeatureSelector<ReadonlyArray<State>>('states');

@@ -3,10 +3,11 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { concatMap, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { Country } from 'src/app/shared/models/countries/country.model';
+import { PayloadCountry } from 'src/app/shared/models/countries/payloadCountry.model';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from 'src/environments/environment';
-import { Country } from '../shared/models/countries/country.model';
-import { PayloadCountry } from '../shared/models/countries/payloadCountry.model';
-import { ApiService } from '../shared/services/api.service';
+
 import {
   getCountriesDone,
   getCountriesRequest,

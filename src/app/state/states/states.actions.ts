@@ -1,4 +1,4 @@
-import { StateObj } from '../shared/models/states/stateObj.model';
+import { StateObj } from '../../shared/models/states/stateObj.model';
 import { createAction, props } from '@ngrx/store';
 
 // When states are not found locally and a API call has to be made

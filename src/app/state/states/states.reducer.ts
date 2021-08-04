@@ -1,8 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
-import { Country } from '../shared/models/countries/country.model';
-import { State } from '../shared/models/states/state.model';
-import { StateObj } from '../shared/models/states/stateObj.model';
-import { addDataRequest } from './add-data-form.actions';
+import { State } from 'src/app/shared/models/states/state.model';
+import { addDataRequest } from '../add-data-form/add-data-form.actions';
 import { getStatesDone } from './states.actions';
 
 const initialState: State[] = [];

@@ -1,22 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { EMPTY, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { CityObj } from 'src/app/shared/models/cities/cityObj.model';
 import { Country } from 'src/app/shared/models/countries/country.model';
-import { PayloadCountry } from 'src/app/shared/models/countries/payloadCountry.model';
 import { StateObj } from 'src/app/shared/models/states/stateObj.model';
 import { ApiService } from 'src/app/shared/services/api.service';
-import { getSelectedCitiesRequest } from 'src/app/state/cities.actions';
-import {
-  selectCities,
-  selectCitiesByState,
-} from 'src/app/state/cities.selectors';
-import { getCountriesRequest } from 'src/app/state/country.actions';
-import { selectCountries } from 'src/app/state/country.selectors';
-import { getSelectedStatesRequest } from 'src/app/state/states.actions';
-import { selectStatesByCountry } from 'src/app/state/states.selectors';
-import { environment } from 'src/environments/environment';
+import { getSelectedCitiesRequest } from 'src/app/state/cities/cities.actions';
+import { selectCitiesByState } from 'src/app/state/cities/cities.selectors';
+import { getCountriesRequest } from 'src/app/state/country/country.actions';
+import { selectCountries } from 'src/app/state/country/country.selectors';
+import { getSelectedStatesRequest } from 'src/app/state/states/states.actions';
+import { selectStatesByCountry } from 'src/app/state/states/states.selectors';
 
 @Component({
   selector: 'app-cities',

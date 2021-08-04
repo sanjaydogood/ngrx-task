@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Country } from '../shared/models/countries/country.model';
+import { Country } from '../../shared/models/countries/country.model';
 
 // export const getCountriesDone = createAction(
 //   '[APP] Get Countries Done',

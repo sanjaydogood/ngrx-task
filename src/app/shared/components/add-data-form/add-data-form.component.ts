@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { addDataRequest } from 'src/app/state/add-data-form.actions';
+import { addDataRequest } from 'src/app/state/add-data-form/add-data-form.actions';
 
 @Component({
   selector: 'add-data-form',

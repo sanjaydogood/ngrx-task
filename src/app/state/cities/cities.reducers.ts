@@ -1,7 +1,7 @@
 import { getCitiesDone } from './cities.actions';
 import { createReducer, on } from '@ngrx/store';
-import { City } from '../shared/models/cities/city.model';
-import { addDataRequest } from './add-data-form.actions';
+import { City } from 'src/app/shared/models/cities/city.model';
+import { addDataRequest } from '../add-data-form/add-data-form.actions';
 
 const initialState: City[] = [];
 export const citiesReducer = createReducer(

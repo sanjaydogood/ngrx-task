@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { CityObj } from '../shared/models/cities/cityObj.model';
+import { CityObj } from '../../shared/models/cities/cityObj.model';
 
 // When states are not found locally and a API call has to be made
 export const getCitiesRequest = createAction(

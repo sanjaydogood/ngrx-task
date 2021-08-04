@@ -2,8 +2,8 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Country } from 'src/app/shared/models/countries/country.model';
-import { getCountriesRequest } from 'src/app/state/country.actions';
-import { selectCountries } from 'src/app/state/country.selectors';
+import { getCountriesRequest } from 'src/app/state/country/country.actions';
+import { selectCountries } from 'src/app/state/country/country.selectors';
 
 @Component({
   selector: 'app-countries',

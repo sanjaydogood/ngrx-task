@@ -1,6 +1,6 @@
-import { addDataRequest } from './add-data-form.actions';
-import { combineReducers, createReducer, on } from '@ngrx/store';
-import { Country } from '../shared/models/countries/country.model';
+import { createReducer, on } from '@ngrx/store';
+import { Country } from 'src/app/shared/models/countries/country.model';
+import { addDataRequest } from '../add-data-form/add-data-form.actions';
 import { getCountriesDone } from './country.actions';
 
 export const initialState: Country[] = [];
