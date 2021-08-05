@@ -10,11 +10,11 @@ import {
   switchMap,
   withLatestFrom,
 } from 'rxjs/operators';
+import { PayloadState } from 'src/app/shared/models/states/payloadState.model';
+import { State } from 'src/app/shared/models/states/state.model';
+import { StateObj } from 'src/app/shared/models/states/stateObj.model';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from 'src/environments/environment';
-import { PayloadState } from '../shared/models/states/payloadState.model';
-import { State } from '../shared/models/states/state.model';
-import { StateObj } from '../shared/models/states/stateObj.model';
-import { ApiService } from '../shared/services/api.service';
 
 import {
   getSelectedStatesDone,

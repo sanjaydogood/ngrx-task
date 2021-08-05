@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { City } from '../shared/models/cities/city.model';
+import { City } from 'src/app/shared/models/cities/city.model';
 
 export const selectCitiesFeatureSlice = createFeatureSelector<City[]>('cities');
 export const selectCities = createSelector(

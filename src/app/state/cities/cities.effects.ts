@@ -9,11 +9,11 @@ import {
   switchMap,
   withLatestFrom,
 } from 'rxjs/operators';
+import { City } from 'src/app/shared/models/cities/city.model';
+import { CityObj } from 'src/app/shared/models/cities/cityObj.model';
+import { PayloadCity } from 'src/app/shared/models/cities/payloadCity.model';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from 'src/environments/environment';
-import { City } from '../shared/models/cities/city.model';
-import { CityObj } from '../shared/models/cities/cityObj.model';
-import { PayloadCity } from '../shared/models/cities/payloadCity.model';
-import { ApiService } from '../shared/services/api.service';
 import {
   getCitiesDone,
   getCitiesRequest,

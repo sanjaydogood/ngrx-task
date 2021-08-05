@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Country } from '../shared/models/countries/country.model';
+import { Country } from 'src/app/shared/models/countries/country.model';
 
 // export const selectCountries = createSelector(
 //   (state: AppState) => state.countries,
